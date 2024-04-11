@@ -1,0 +1,70 @@
+[2024-04-09 21:33:22,729] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Convertir_dataframe manual__2024-04-09T21:26:34.993990+00:00 [queued]>
+[2024-04-09 21:33:22,742] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Convertir_dataframe manual__2024-04-09T21:26:34.993990+00:00 [queued]>
+[2024-04-09 21:33:22,742] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-09 21:33:22,743] {taskinstance.py:1377} INFO - Starting attempt 3 of 6
+[2024-04-09 21:33:22,743] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-09 21:33:22,760] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Convertir_dataframe> on 2024-04-09 21:26:34.993990+00:00
+[2024-04-09 21:33:22,764] {standard_task_runner.py:52} INFO - Started process 319 to run task
+[2024-04-09 21:33:22,767] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'NEO_coderhouse', 'Convertir_dataframe', 'manual__2024-04-09T21:26:34.993990+00:00', '--job-id', '121', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp5avwn8kz', '--error-file', '/tmp/tmp1732or7i']
+[2024-04-09 21:33:22,769] {standard_task_runner.py:80} INFO - Job 121: Subtask Convertir_dataframe
+[2024-04-09 21:33:22,832] {task_command.py:371} INFO - Running <TaskInstance: NEO_coderhouse.Convertir_dataframe manual__2024-04-09T21:26:34.993990+00:00 [running]> on host c346f321fefe
+[2024-04-09 21:33:22,896] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=LukeFo
+AIRFLOW_CTX_DAG_ID=NEO_coderhouse
+AIRFLOW_CTX_TASK_ID=Convertir_dataframe
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-09T21:26:34.993990+00:00
+AIRFLOW_CTX_TRY_NUMBER=3
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-04-09T21:26:34.993990+00:00
+[2024-04-09 21:33:22,897] {logging_mixin.py:115} INFO - Hola
+[2024-04-09 21:33:23,823] {logging_mixin.py:115} INFO - <class 'pandas.core.frame.DataFrame'>
+[2024-04-09 21:33:23,824] {python.py:173} INFO - Done. Returned value was:     neo_reference_id                 name  ...  distance_kilometers  orbiting_body
+0            2153195    153195 (2000 WB1)  ...         3.565162e+07          Earth
+1            2220124   220124 (2002 TE66)  ...         4.837523e+07          Earth
+2            2533990  533990 (2014 QX266)  ...         4.439614e+07          Earth
+3            3408650          (2008 GL20)  ...         4.536228e+07          Earth
+4            3777663          (2015 CN62)  ...         2.517414e+07          Earth
+5            3836853           (2018 XR2)  ...         5.195993e+07          Earth
+6            3840687            (2019 FQ)  ...         3.513037e+07          Earth
+7            3989301          (2020 BP13)  ...         5.813596e+06          Earth
+8           54051050           (2020 PY2)  ...         2.085411e+07          Earth
+9           54109941            (2021 CG)  ...         1.785732e+07          Earth
+10          54144375           (2021 JA4)  ...         5.304414e+07          Earth
+11          54196823          (2021 RB16)  ...         4.889946e+07          Earth
+12          54292683           (2022 OB5)  ...         1.019978e+07          Earth
+13          54339170           (2023 AE2)  ...         6.230971e+07          Earth
+14          54359258            (2023 KU)  ...         3.107635e+07          Earth
+15          54374410           (2023 MZ5)  ...         6.807497e+07          Earth
+16          54419613           (2024 AN2)  ...         3.963388e+07          Earth
+17           2654647   654647 (2015 CN62)  ...         2.517412e+07          Earth
+18          54428347           (2024 DD1)  ...         2.134066e+07          Earth
+19          54432239            (2024 GE)  ...         1.058031e+07          Earth
+
+[20 rows x 11 columns]
+[2024-04-09 21:33:23,846] {xcom.py:586} ERROR - Could not serialize the XCom value into JSON. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config.
+[2024-04-09 21:33:23,847] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 68, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 2412, in xcom_push
+    session=session,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 68, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/xcom.py", line 198, in set
+    map_index=map_index,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/xcom.py", line 583, in serialize_value
+    return json.dumps(value).encode('UTF-8')
+  File "/usr/local/lib/python3.7/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/local/lib/python3.7/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/lib/python3.7/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/local/lib/python3.7/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type DataFrame is not JSON serializable
+[2024-04-09 21:33:23,858] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=NEO_coderhouse, task_id=Convertir_dataframe, execution_date=20240409T212634, start_date=20240409T213322, end_date=20240409T213323
+[2024-04-09 21:33:23,871] {standard_task_runner.py:97} ERROR - Failed to execute job 121 for task Convertir_dataframe (Object of type DataFrame is not JSON serializable; 319)
+[2024-04-09 21:33:23,909] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-04-09 21:33:23,948] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

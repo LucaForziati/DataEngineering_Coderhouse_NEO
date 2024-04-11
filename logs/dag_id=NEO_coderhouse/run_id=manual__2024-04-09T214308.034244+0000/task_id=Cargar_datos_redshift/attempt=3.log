@@ -1,0 +1,37 @@
+[2024-04-09 21:49:18,653] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Cargar_datos_redshift manual__2024-04-09T21:43:08.034244+00:00 [queued]>
+[2024-04-09 21:49:18,666] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Cargar_datos_redshift manual__2024-04-09T21:43:08.034244+00:00 [queued]>
+[2024-04-09 21:49:18,667] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-09 21:49:18,668] {taskinstance.py:1377} INFO - Starting attempt 3 of 6
+[2024-04-09 21:49:18,668] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-09 21:49:18,682] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Cargar_datos_redshift> on 2024-04-09 21:43:08.034244+00:00
+[2024-04-09 21:49:18,687] {standard_task_runner.py:52} INFO - Started process 1057 to run task
+[2024-04-09 21:49:18,690] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'NEO_coderhouse', 'Cargar_datos_redshift', 'manual__2024-04-09T21:43:08.034244+00:00', '--job-id', '173', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpt7pg56h9', '--error-file', '/tmp/tmpx1s_jp2n']
+[2024-04-09 21:49:18,692] {standard_task_runner.py:80} INFO - Job 173: Subtask Cargar_datos_redshift
+[2024-04-09 21:49:18,759] {task_command.py:371} INFO - Running <TaskInstance: NEO_coderhouse.Cargar_datos_redshift manual__2024-04-09T21:43:08.034244+00:00 [running]> on host c346f321fefe
+[2024-04-09 21:49:18,827] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=LukeFo
+AIRFLOW_CTX_DAG_ID=NEO_coderhouse
+AIRFLOW_CTX_TASK_ID=Cargar_datos_redshift
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-09T21:43:08.034244+00:00
+AIRFLOW_CTX_TRY_NUMBER=3
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-04-09T21:43:08.034244+00:00
+[2024-04-09 21:49:18,828] {logging_mixin.py:115} INFO - Hola
+[2024-04-09 21:49:19,747] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag.py", line 100, in cargar_redshift
+    neo_json = convertir_dataframe()
+  File "/opt/airflow/dags/dag.py", line 94, in convertir_dataframe
+    neo_json = neo.json()
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/generic.py", line 5487, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'json'
+[2024-04-09 21:49:19,763] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=NEO_coderhouse, task_id=Cargar_datos_redshift, execution_date=20240409T214308, start_date=20240409T214918, end_date=20240409T214919
+[2024-04-09 21:49:19,776] {standard_task_runner.py:97} ERROR - Failed to execute job 173 for task Cargar_datos_redshift ('DataFrame' object has no attribute 'json'; 1057)
+[2024-04-09 21:49:19,788] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-04-09 21:49:19,818] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
