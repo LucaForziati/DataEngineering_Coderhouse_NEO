@@ -1,0 +1,45 @@
+[2024-04-16 22:12:32,262] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Descargar_datos_crudos scheduled__2024-04-12T00:00:00+00:00 [queued]>
+[2024-04-16 22:12:32,286] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Descargar_datos_crudos scheduled__2024-04-12T00:00:00+00:00 [queued]>
+[2024-04-16 22:12:32,287] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-16 22:12:32,288] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2024-04-16 22:12:32,289] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-16 22:12:32,329] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Descargar_datos_crudos> on 2024-04-12 00:00:00+00:00
+[2024-04-16 22:12:32,364] {standard_task_runner.py:52} INFO - Started process 189 to run task
+[2024-04-16 22:12:32,370] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'NEO_coderhouse', 'Descargar_datos_crudos', 'scheduled__2024-04-12T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpgp73kopx', '--error-file', '/tmp/tmpp6z9s15m']
+[2024-04-16 22:12:32,373] {standard_task_runner.py:80} INFO - Job 11: Subtask Descargar_datos_crudos
+[2024-04-16 22:12:32,488] {task_command.py:371} INFO - Running <TaskInstance: NEO_coderhouse.Descargar_datos_crudos scheduled__2024-04-12T00:00:00+00:00 [running]> on host 2e237166a7ec
+[2024-04-16 22:12:32,624] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=LukeFo
+AIRFLOW_CTX_DAG_ID=NEO_coderhouse
+AIRFLOW_CTX_TASK_ID=Descargar_datos_crudos
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-12T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-04-12T00:00:00+00:00
+[2024-04-16 22:12:32,625] {logging_mixin.py:115} INFO - Hola
+[2024-04-16 22:12:32,630] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/funciones.py", line 30, in consulta_api_nasa
+    respuesta_cruda = requests.get(api_url, params = parametros)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 573, in request
+    prep = self.prepare_request(req)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/sessions.py", line 496, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/home/airflow/.local/lib/python3.7/site-packages/requests/models.py", line 440, in prepare_url
+    f"Invalid URL {url!r}: No scheme supplied. "
+requests.exceptions.MissingSchema: Invalid URL '': No scheme supplied. Perhaps you meant http://?
+[2024-04-16 22:12:32,654] {taskinstance.py:1420} INFO - Marking task as UP_FOR_RETRY. dag_id=NEO_coderhouse, task_id=Descargar_datos_crudos, execution_date=20240412T000000, start_date=20240416T221232, end_date=20240416T221232
+[2024-04-16 22:12:32,676] {standard_task_runner.py:97} ERROR - Failed to execute job 11 for task Descargar_datos_crudos (Invalid URL '': No scheme supplied. Perhaps you meant http://?; 189)
+[2024-04-16 22:12:32,707] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-04-16 22:12:32,792] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
