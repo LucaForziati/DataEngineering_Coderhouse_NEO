@@ -1,0 +1,25 @@
+[2024-04-20 13:10:35,890] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Convertir_dataframe manual__2024-04-20T13:10:27.897481+00:00 [queued]>
+[2024-04-20 13:10:35,921] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Convertir_dataframe manual__2024-04-20T13:10:27.897481+00:00 [queued]>
+[2024-04-20 13:10:35,922] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-20 13:10:35,923] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2024-04-20 13:10:35,925] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-20 13:10:35,993] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Convertir_dataframe> on 2024-04-20 13:10:27.897481+00:00
+[2024-04-20 13:10:36,000] {standard_task_runner.py:52} INFO - Started process 796 to run task
+[2024-04-20 13:10:36,004] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'NEO_coderhouse', 'Convertir_dataframe', 'manual__2024-04-20T13:10:27.897481+00:00', '--job-id', '125', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpy19su_4e', '--error-file', '/tmp/tmpjbc80cy2']
+[2024-04-20 13:10:36,007] {standard_task_runner.py:80} INFO - Job 125: Subtask Convertir_dataframe
+[2024-04-20 13:10:36,239] {task_command.py:371} INFO - Running <TaskInstance: NEO_coderhouse.Convertir_dataframe manual__2024-04-20T13:10:27.897481+00:00 [running]> on host 2e237166a7ec
+[2024-04-20 13:10:36,475] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=LukeFo
+AIRFLOW_CTX_DAG_ID=NEO_coderhouse
+AIRFLOW_CTX_TASK_ID=Convertir_dataframe
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-20T13:10:27.897481+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-04-20T13:10:27.897481+00:00
+[2024-04-20 13:10:36,476] {logging_mixin.py:115} INFO - Hola
+[2024-04-20 13:10:37,649] {logging_mixin.py:115} INFO - Cantidad de registros extraidos el 2024-04-19 - 5
+[2024-04-20 13:10:37,651] {python.py:173} INFO - Done. Returned value was: {'neo_reference_id': {0: 2523609, 1: 3457849, 2: 3638430, 3: 3648878, 4: 3678561}, 'name': {0: '523609 (2005 PJ2)', 1: '(2009 HL21)', 2: '(2013 JR22)', 3: '(2013 TG6)', 4: '(2014 OZ337)'}, 'absolute_magnitude_h': {0: 19.53, 1: 22.55, 2: 20.87, 3: 26.58, 4: 22.5}, 'is_potentially_hazardous_asteroid': {0: True, 1: False, 2: False, 3: False, 4: False}, 'is_sentry_object': {0: False, 1: False, 2: False, 3: False, 4: False}, 'estimated_diameter_min': {0: 330.0311833581, 1: 82.1400525962, 2: 178.0553291829, 3: 12.8397029582, 4: 84.0533402073}, 'estimated_diameter_max': {0: 737.9721606833, 1: 183.6707412805, 2: 398.1438198091, 3: 28.7104486255, 4: 187.9489824394}, 'close_approach_date_full': {0: '2024-Apr-19 14:28', 1: '2024-Apr-19 04:54', 2: '2024-Apr-19 07:59', 3: '2024-Apr-19 07:26', 4: '2024-Apr-19 03:31'}, 'kilometers_per_second': {0: 22.9484601531, 1: 12.0990998055, 2: 21.0815781233, 3: 5.1134664778, 4: 18.0160902822}, 'distance_kilometers': {0: 40850317.71260583, 1: 17726846.457095288, 2: 18729118.347057093, 3: 25917287.39867957, 4: 40274263.07952999}, 'orbiting_body': {0: 'Earth', 1: 'Earth', 2: 'Earth', 3: 'Earth', 4: 'Earth'}}
+[2024-04-20 13:10:37,753] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=NEO_coderhouse, task_id=Convertir_dataframe, execution_date=20240420T131027, start_date=20240420T131035, end_date=20240420T131037
+[2024-04-20 13:10:37,832] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-04-20 13:10:37,950] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

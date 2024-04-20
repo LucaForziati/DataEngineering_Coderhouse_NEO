@@ -1,0 +1,25 @@
+[2024-04-19 16:29:55,211] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.notificar_objetos_cercanos manual__2024-04-19T16:29:53.796487+00:00 [queued]>
+[2024-04-19 16:29:55,222] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.notificar_objetos_cercanos manual__2024-04-19T16:29:53.796487+00:00 [queued]>
+[2024-04-19 16:29:55,223] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-19 16:29:55,224] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2024-04-19 16:29:55,225] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-19 16:29:55,244] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): notificar_objetos_cercanos> on 2024-04-19 16:29:53.796487+00:00
+[2024-04-19 16:29:55,250] {standard_task_runner.py:52} INFO - Started process 313 to run task
+[2024-04-19 16:29:55,251] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'NEO_coderhouse', 'notificar_objetos_cercanos', 'manual__2024-04-19T16:29:53.796487+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpg0g7xyt4', '--error-file', '/tmp/tmps24y3n4g']
+[2024-04-19 16:29:55,253] {standard_task_runner.py:80} INFO - Job 56: Subtask notificar_objetos_cercanos
+[2024-04-19 16:29:55,321] {task_command.py:371} INFO - Running <TaskInstance: NEO_coderhouse.notificar_objetos_cercanos manual__2024-04-19T16:29:53.796487+00:00 [running]> on host 2e237166a7ec
+[2024-04-19 16:29:55,393] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=LukeFo
+AIRFLOW_CTX_DAG_ID=NEO_coderhouse
+AIRFLOW_CTX_TASK_ID=notificar_objetos_cercanos
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-19T16:29:53.796487+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-04-19T16:29:53.796487+00:00
+[2024-04-19 16:30:37,503] {logging_mixin.py:115} INFO - [Errno 99] Cannot assign requested address
+[2024-04-19 16:30:37,504] {logging_mixin.py:115} INFO - Failure
+[2024-04-19 16:30:37,505] {python.py:173} INFO - Done. Returned value was: None
+[2024-04-19 16:30:37,524] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=NEO_coderhouse, task_id=notificar_objetos_cercanos, execution_date=20240419T162953, start_date=20240419T162955, end_date=20240419T163037
+[2024-04-19 16:30:37,549] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-04-19 16:30:37,572] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

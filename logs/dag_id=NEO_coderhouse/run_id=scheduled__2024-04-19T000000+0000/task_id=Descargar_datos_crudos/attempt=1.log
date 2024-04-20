@@ -1,0 +1,24 @@
+[2024-04-20 12:53:24,889] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Descargar_datos_crudos scheduled__2024-04-19T00:00:00+00:00 [queued]>
+[2024-04-20 12:53:24,901] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Descargar_datos_crudos scheduled__2024-04-19T00:00:00+00:00 [queued]>
+[2024-04-20 12:53:24,901] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-20 12:53:24,902] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2024-04-20 12:53:24,903] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-20 12:53:24,925] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Descargar_datos_crudos> on 2024-04-19 00:00:00+00:00
+[2024-04-20 12:53:24,932] {standard_task_runner.py:52} INFO - Started process 181 to run task
+[2024-04-20 12:53:24,935] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'NEO_coderhouse', 'Descargar_datos_crudos', 'scheduled__2024-04-19T00:00:00+00:00', '--job-id', '108', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpkmsu4es7', '--error-file', '/tmp/tmp4flnaply']
+[2024-04-20 12:53:24,937] {standard_task_runner.py:80} INFO - Job 108: Subtask Descargar_datos_crudos
+[2024-04-20 12:53:25,026] {task_command.py:371} INFO - Running <TaskInstance: NEO_coderhouse.Descargar_datos_crudos scheduled__2024-04-19T00:00:00+00:00 [running]> on host 2e237166a7ec
+[2024-04-20 12:53:25,146] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=LukeFo
+AIRFLOW_CTX_DAG_ID=NEO_coderhouse
+AIRFLOW_CTX_TASK_ID=Descargar_datos_crudos
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-19T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-04-19T00:00:00+00:00
+[2024-04-20 12:53:25,147] {logging_mixin.py:115} INFO - Hola
+[2024-04-20 12:53:26,893] {python.py:173} INFO - Done. Returned value was: {'links': {'next': 'http://api.nasa.gov/neo/rest/v1/feed?start_date=2024-04-21&end_date=2024-04-21&detailed=false&api_key=1vQKAD9leMbOeppmESs3aFLlbjnAcoylVNyxdWdj', 'prev': 'http://api.nasa.gov/neo/rest/v1/feed?start_date=2024-04-19&end_date=2024-04-19&detailed=false&api_key=1vQKAD9leMbOeppmESs3aFLlbjnAcoylVNyxdWdj', 'self': 'http://api.nasa.gov/neo/rest/v1/feed?start_date=2024-04-20&end_date=2024-04-20&detailed=false&api_key=1vQKAD9leMbOeppmESs3aFLlbjnAcoylVNyxdWdj'}, 'element_count': 1, 'near_earth_objects': {'2024-04-20': [{'links': {'self': 'http://api.nasa.gov/neo/rest/v1/neo/3092476?api_key=1vQKAD9leMbOeppmESs3aFLlbjnAcoylVNyxdWdj'}, 'id': '3092476', 'neo_reference_id': '3092476', 'name': '(2001 VE2)', 'nasa_jpl_url': 'https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3092476', 'absolute_magnitude_h': 25.0, 'estimated_diameter': {'kilometers': {'estimated_diameter_min': 0.02658, 'estimated_diameter_max': 0.0594346868}, 'meters': {'estimated_diameter_min': 26.58, 'estimated_diameter_max': 59.4346868419}, 'miles': {'estimated_diameter_min': 0.0165160412, 'estimated_diameter_max': 0.0369309908}, 'feet': {'estimated_diameter_min': 87.2047272, 'estimated_diameter_max': 194.9956979785}}, 'is_potentially_hazardous_asteroid': False, 'close_approach_data': [{'close_approach_date': '2024-04-20', 'close_approach_date_full': '2024-Apr-20 08:38', 'epoch_date_close_approach': 1713602280000, 'relative_velocity': {'kilometers_per_second': '14.2406261493', 'kilometers_per_hour': '51266.2541373814', 'miles_per_hour': '31854.8566333079'}, 'miss_distance': {'astronomical': '0.3268194002', 'lunar': '127.1327466778', 'kilometers': '48891486.144597574', 'miles': '30379760.7620275612'}, 'orbiting_body': 'Earth'}], 'is_sentry_object': False}]}}
+[2024-04-20 12:53:27,013] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=NEO_coderhouse, task_id=Descargar_datos_crudos, execution_date=20240419T000000, start_date=20240420T125324, end_date=20240420T125327
+[2024-04-20 12:53:27,098] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-04-20 12:53:27,330] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

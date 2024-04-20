@@ -1,6 +1,6 @@
 # importar librerias
 from datetime import datetime, timedelta
-from funciones_dag import consulta_api_nasa, convertir_dataframe, cargar_redshift
+from funciones_dag import consulta_api_nasa, convertir_dataframe, cargar_redshift, notificar_neo
 
 from airflow import DAG
 from airflow.models import Variable
@@ -16,8 +16,6 @@ default_args={
     # frecuencia con la cual va a ejecutar cada intento
     'retry_delay': timedelta(minutes=3)
 }
-
-
 
 api_dag = DAG(
     # argumentos definidos previamente.
@@ -45,12 +43,19 @@ task2 = PythonOperator(
 )
 
 task3 = PythonOperator(
+    task_id='notificar_objetos_cercanos',
+    python_callable=notificar_neo,
+    dag=api_dag
+)
+
+task4 = PythonOperator(
     task_id='Cargar_datos_redshift',
     python_callable=cargar_redshift,
     dag=api_dag
 )
 
-task1 >> task2 >> task3
+
+task1 >> task2 >> task3 >> task4
 
 
 

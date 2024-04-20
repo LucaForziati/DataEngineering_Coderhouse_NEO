@@ -1,0 +1,25 @@
+[2024-04-20 13:08:06,981] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Convertir_dataframe manual__2024-04-20T13:08:01.904063+00:00 [queued]>
+[2024-04-20 13:08:07,040] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Convertir_dataframe manual__2024-04-20T13:08:01.904063+00:00 [queued]>
+[2024-04-20 13:08:07,041] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-20 13:08:07,042] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2024-04-20 13:08:07,042] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-20 13:08:07,073] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Convertir_dataframe> on 2024-04-20 13:08:01.904063+00:00
+[2024-04-20 13:08:07,089] {standard_task_runner.py:52} INFO - Started process 700 to run task
+[2024-04-20 13:08:07,097] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'NEO_coderhouse', 'Convertir_dataframe', 'manual__2024-04-20T13:08:01.904063+00:00', '--job-id', '119', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpm_hmy6l9', '--error-file', '/tmp/tmpssxbv9km']
+[2024-04-20 13:08:07,100] {standard_task_runner.py:80} INFO - Job 119: Subtask Convertir_dataframe
+[2024-04-20 13:08:07,231] {task_command.py:371} INFO - Running <TaskInstance: NEO_coderhouse.Convertir_dataframe manual__2024-04-20T13:08:01.904063+00:00 [running]> on host 2e237166a7ec
+[2024-04-20 13:08:07,392] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=LukeFo
+AIRFLOW_CTX_DAG_ID=NEO_coderhouse
+AIRFLOW_CTX_TASK_ID=Convertir_dataframe
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-20T13:08:01.904063+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-04-20T13:08:01.904063+00:00
+[2024-04-20 13:08:07,396] {logging_mixin.py:115} INFO - Hola
+[2024-04-20 13:08:08,560] {logging_mixin.py:115} INFO - Cantidad de registros extraidos el 2024-04-20 - 1
+[2024-04-20 13:08:08,561] {python.py:173} INFO - Done. Returned value was: {'neo_reference_id': {0: 3092476}, 'name': {0: '(2001 VE2)'}, 'absolute_magnitude_h': {0: 25.0}, 'is_potentially_hazardous_asteroid': {0: False}, 'is_sentry_object': {0: False}, 'estimated_diameter_min': {0: 26.58}, 'estimated_diameter_max': {0: 59.4346868419}, 'close_approach_date_full': {0: '2024-Apr-20 08:38'}, 'kilometers_per_second': {0: 14.2406261493}, 'distance_kilometers': {0: 48891486.144597575}, 'orbiting_body': {0: 'Earth'}}
+[2024-04-20 13:08:08,640] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=NEO_coderhouse, task_id=Convertir_dataframe, execution_date=20240420T130801, start_date=20240420T130807, end_date=20240420T130808
+[2024-04-20 13:08:08,725] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-04-20 13:08:08,820] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,27 @@
+[2024-04-20 12:58:31,883] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Cargar_datos_redshift manual__2024-04-20T12:58:16.249440+00:00 [queued]>
+[2024-04-20 12:58:31,905] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.Cargar_datos_redshift manual__2024-04-20T12:58:16.249440+00:00 [queued]>
+[2024-04-20 12:58:31,906] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-20 12:58:31,910] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2024-04-20 12:58:31,912] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-20 12:58:31,941] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): Cargar_datos_redshift> on 2024-04-20 12:58:16.249440+00:00
+[2024-04-20 12:58:31,947] {standard_task_runner.py:52} INFO - Started process 367 to run task
+[2024-04-20 12:58:31,951] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'NEO_coderhouse', 'Cargar_datos_redshift', 'manual__2024-04-20T12:58:16.249440+00:00', '--job-id', '114', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpoacu7nsy', '--error-file', '/tmp/tmpv7jxlok3']
+[2024-04-20 12:58:31,953] {standard_task_runner.py:80} INFO - Job 114: Subtask Cargar_datos_redshift
+[2024-04-20 12:58:32,073] {task_command.py:371} INFO - Running <TaskInstance: NEO_coderhouse.Cargar_datos_redshift manual__2024-04-20T12:58:16.249440+00:00 [running]> on host 2e237166a7ec
+[2024-04-20 12:58:32,232] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=LukeFo
+AIRFLOW_CTX_DAG_ID=NEO_coderhouse
+AIRFLOW_CTX_TASK_ID=Cargar_datos_redshift
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-20T12:58:16.249440+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-04-20T12:58:16.249440+00:00
+[2024-04-20 12:58:32,235] {logging_mixin.py:115} INFO - Hola
+[2024-04-20 12:58:33,357] {logging_mixin.py:115} INFO - Cantidad de registros extraidos el 2024-04-20 - 1
+[2024-04-20 12:58:33,361] {logging_mixin.py:115} INFO - Se van a insertar 1 registros.
+[2024-04-20 12:58:38,063] {logging_mixin.py:115} INFO - Conectado correctamente
+[2024-04-20 12:58:38,066] {python.py:173} INFO - Done. Returned value was: None
+[2024-04-20 12:58:38,096] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=NEO_coderhouse, task_id=Cargar_datos_redshift, execution_date=20240420T125816, start_date=20240420T125831, end_date=20240420T125838
+[2024-04-20 12:58:38,146] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-04-20 12:58:38,228] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

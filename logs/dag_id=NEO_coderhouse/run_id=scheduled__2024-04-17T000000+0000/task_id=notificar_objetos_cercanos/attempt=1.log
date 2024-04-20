@@ -1,0 +1,25 @@
+[2024-04-19 16:28:07,283] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.notificar_objetos_cercanos scheduled__2024-04-17T00:00:00+00:00 [queued]>
+[2024-04-19 16:28:07,303] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.notificar_objetos_cercanos scheduled__2024-04-17T00:00:00+00:00 [queued]>
+[2024-04-19 16:28:07,303] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-19 16:28:07,304] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2024-04-19 16:28:07,304] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-19 16:28:07,323] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): notificar_objetos_cercanos> on 2024-04-17 00:00:00+00:00
+[2024-04-19 16:28:07,343] {standard_task_runner.py:52} INFO - Started process 246 to run task
+[2024-04-19 16:28:07,373] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'NEO_coderhouse', 'notificar_objetos_cercanos', 'scheduled__2024-04-17T00:00:00+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp1i5x1va6', '--error-file', '/tmp/tmpz2dkd5rd']
+[2024-04-19 16:28:07,376] {standard_task_runner.py:80} INFO - Job 52: Subtask notificar_objetos_cercanos
+[2024-04-19 16:28:07,678] {task_command.py:371} INFO - Running <TaskInstance: NEO_coderhouse.notificar_objetos_cercanos scheduled__2024-04-17T00:00:00+00:00 [running]> on host 2e237166a7ec
+[2024-04-19 16:28:07,848] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=LukeFo
+AIRFLOW_CTX_DAG_ID=NEO_coderhouse
+AIRFLOW_CTX_TASK_ID=notificar_objetos_cercanos
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-17T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-04-17T00:00:00+00:00
+[2024-04-19 16:28:09,979] {logging_mixin.py:115} INFO - (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials v2-20020aa78082000000b006eab6ac1f83sm3430653pff.0 - gsmtp')
+[2024-04-19 16:28:09,980] {logging_mixin.py:115} INFO - Failure
+[2024-04-19 16:28:09,980] {python.py:173} INFO - Done. Returned value was: None
+[2024-04-19 16:28:10,004] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=NEO_coderhouse, task_id=notificar_objetos_cercanos, execution_date=20240417T000000, start_date=20240419T162807, end_date=20240419T162810
+[2024-04-19 16:28:10,047] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-04-19 16:28:10,093] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

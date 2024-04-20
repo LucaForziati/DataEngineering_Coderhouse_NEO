@@ -5,18 +5,17 @@ import numpy as np
 from datetime import datetime, timedelta
 from sqlalchemy import create_engine, text as sql_text
 import psycopg2
+from email import message
+import smtplib
 
 # obtener la fecha de hoy
 fecha_hoy = datetime.now().strftime('%Y-%m-%d')
+
 
 # credenciales API de la nasa
 api_url = 'https://api.nasa.gov/neo/rest/v1/feed?'
 api_key = "1vQKAD9leMbOeppmESs3aFLlbjnAcoylVNyxdWdj"
 
-# credenciales Amazon redshift
-user_redshift = ""
-pass_redshift = ""
-database = ""
 
 def consulta_api_nasa():
     print("Hola")
@@ -76,16 +75,14 @@ def convertir_dataframe():
         for i in columnas_a_eliminar:
             neo = neo.drop(i, axis=1)
         neo_json = neo.to_dict()
-        print(neo_json)
+        print(f'Cantidad de registros extraidos el {fecha_hoy} - {neo.shape[0]}')
         return neo_json
 
 
 def cargar_redshift():
     neo_json = convertir_dataframe()
-    print("JSON")
-    print(neo_json)
-    print(type(neo_json))
     neo = pd.DataFrame(neo_json)
+    print(f'Se van a insertar {neo.shape[0]} registros.')
     try:
         # proceso para conectar. INSERTAR CREDENCIALES!!
         engine = create_engine("postgresql://lucaforziati_coderhouse:H2wt20L9MF@data-engineer-cluster.cyhh5bfevlmn.us-east-1.redshift.amazonaws.com:5439/data-engineer-database")
@@ -96,3 +93,53 @@ def cargar_redshift():
     except Exception as e:
         print("No fue posible conectar")
         print(e)
+
+def notificar_neo():
+
+    # Obtener aquellos objetos que pasen cerca de la tierra y puedan ser una amenaza.
+    # El criterio será establecido de forma aleatoria. En este caso se toma aquellos que pasen mas cerca de 5.000.000 km
+    # o que "is_potentially_hazardous_asteroid" sea True. 
+
+    def id_objetos(dataset):
+        ids = ''
+        for i in dataset['neo_reference_id']:
+            ids += f'\n      - Neo_reference_id: {i}.'
+        return ids
+
+    neo_json = convertir_dataframe()
+    neo = pd.DataFrame(neo_json)
+    neo_filtrado = neo.loc[(neo['distance_kilometers'] < 5000000) | (neo['is_potentially_hazardous_asteroid'] == True)]
+    
+    if neo_filtrado.empty:
+        print("No hay registros")
+        None
+    else:
+        print("Hay registros")
+        body_text_notificacion = f'''Estimado/a Cientifico/a: 
+            El escaner de fecha {fecha_hoy} ha detectado {neo_filtrado.shape[0]} objetos de potencial riesgo. 
+            IDs de los objetos: {id_objetos(neo_filtrado)} \n
+            Esperamos respuesta acuerdo al protocolo.'''
+
+        # conexion para enviar el mail
+        try:
+            x=smtplib.SMTP('smtp-mail.outlook.com',587)
+            x.starttls()
+            # datos del remitente y destintario
+            remitente = 'juanmaranello@hotmail.com'
+            contrasenia = 'philco123'
+            destinatario = 'juanmaranello@hotmail.com'
+            # conexion al mail remitente
+            x.login(remitente, contrasenia)
+            # Motivo del mail
+            subject='Se han detectado objetos cercanos a la tierra'
+            # cuerpo del mail
+            body_text= body_text_notificacion
+            # Cuerpo del mail
+            message='Subject: {}\n\n{}'.format(subject,body_text)
+            # enviar
+            x.sendmail(remitente, destinatario ,message)
+            print('Exito')
+        except Exception as exception:
+            print(exception)
+            print('Failure')    
+

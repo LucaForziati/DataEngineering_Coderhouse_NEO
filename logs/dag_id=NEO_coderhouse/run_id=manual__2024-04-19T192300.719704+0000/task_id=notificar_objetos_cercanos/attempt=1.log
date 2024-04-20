@@ -1,0 +1,30 @@
+[2024-04-19 19:23:08,311] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.notificar_objetos_cercanos manual__2024-04-19T19:23:00.719704+00:00 [queued]>
+[2024-04-19 19:23:08,321] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: NEO_coderhouse.notificar_objetos_cercanos manual__2024-04-19T19:23:00.719704+00:00 [queued]>
+[2024-04-19 19:23:08,322] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-19 19:23:08,323] {taskinstance.py:1377} INFO - Starting attempt 1 of 6
+[2024-04-19 19:23:08,323] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-04-19 19:23:08,339] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): notificar_objetos_cercanos> on 2024-04-19 19:23:00.719704+00:00
+[2024-04-19 19:23:08,343] {standard_task_runner.py:52} INFO - Started process 199 to run task
+[2024-04-19 19:23:08,346] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'NEO_coderhouse', 'notificar_objetos_cercanos', 'manual__2024-04-19T19:23:00.719704+00:00', '--job-id', '83', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp_27qqpm6', '--error-file', '/tmp/tmp656a3022']
+[2024-04-19 19:23:08,347] {standard_task_runner.py:80} INFO - Job 83: Subtask notificar_objetos_cercanos
+[2024-04-19 19:23:08,419] {task_command.py:371} INFO - Running <TaskInstance: NEO_coderhouse.notificar_objetos_cercanos manual__2024-04-19T19:23:00.719704+00:00 [running]> on host 2e237166a7ec
+[2024-04-19 19:23:08,491] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=LukeFo
+AIRFLOW_CTX_DAG_ID=NEO_coderhouse
+AIRFLOW_CTX_TASK_ID=notificar_objetos_cercanos
+AIRFLOW_CTX_EXECUTION_DATE=2024-04-19T19:23:00.719704+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-04-19T19:23:00.719704+00:00
+[2024-04-19 19:23:08,492] {logging_mixin.py:115} INFO - Hola
+[2024-04-19 19:23:09,355] {logging_mixin.py:115} INFO - Cantidad de registros extraidos el 2024-04-19 - 18
+[2024-04-19 19:23:09,363] {logging_mixin.py:115} INFO - neo_reference_id: 2523609
+[2024-04-19 19:23:09,363] {logging_mixin.py:115} INFO - neo_reference_id: 3781983
+[2024-04-19 19:23:09,364] {logging_mixin.py:115} INFO - neo_reference_id: 54144237
+[2024-04-19 19:23:09,364] {logging_mixin.py:115} INFO - neo_reference_id: 54435202
+[2024-04-19 19:23:11,050] {logging_mixin.py:115} INFO - Exito
+[2024-04-19 19:23:11,052] {python.py:173} INFO - Done. Returned value was: None
+[2024-04-19 19:23:11,063] {taskinstance.py:1420} INFO - Marking task as SUCCESS. dag_id=NEO_coderhouse, task_id=notificar_objetos_cercanos, execution_date=20240419T192300, start_date=20240419T192308, end_date=20240419T192311
+[2024-04-19 19:23:11,098] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-04-19 19:23:11,134] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
