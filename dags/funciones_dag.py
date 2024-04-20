@@ -13,8 +13,8 @@ fecha_hoy = datetime.now().strftime('%Y-%m-%d')
 
 
 # credenciales API de la nasa
-api_url = 'https://api.nasa.gov/neo/rest/v1/feed?'
-api_key = "1vQKAD9leMbOeppmESs3aFLlbjnAcoylVNyxdWdj"
+api_url = ''
+api_key = ""
 
 
 def consulta_api_nasa():
@@ -85,7 +85,7 @@ def cargar_redshift():
     print(f'Se van a insertar {neo.shape[0]} registros.')
     try:
         # proceso para conectar. INSERTAR CREDENCIALES!!
-        engine = create_engine("postgresql://lucaforziati_coderhouse:H2wt20L9MF@data-engineer-cluster.cyhh5bfevlmn.us-east-1.redshift.amazonaws.com:5439/data-engineer-database")
+        engine = create_engine("")
         # cargar dataset a redshift
         neo.to_sql('neo', con = engine, index=False, if_exists='append')
         print("Conectado correctamente")
@@ -125,9 +125,9 @@ def notificar_neo():
             x=smtplib.SMTP('smtp-mail.outlook.com',587)
             x.starttls()
             # datos del remitente y destintario
-            remitente = 'juanmaranello@hotmail.com'
-            contrasenia = 'philco123'
-            destinatario = 'juanmaranello@hotmail.com'
+            remitente = ''
+            contrasenia = ''
+            destinatario = ''
             # conexion al mail remitente
             x.login(remitente, contrasenia)
             # Motivo del mail
